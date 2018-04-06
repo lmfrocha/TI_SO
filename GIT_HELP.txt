@@ -1,0 +1,46 @@
+origin: nome padrão para a sua cópia local no repositório
+master: nome padrão do branch principal remoto
+
+(((Comandos listados na ordem que devem ser executados))))
+______________________
+###Pull e Status###
+
+//Comando opicional para ver o q mudou
+
+git status
+
+//pegar mudanças no remoto, necessário para evitar conflitos. (Usa só se houver alterações no git)
+
+git pull origin master 
+
+______________________
+###Adicionar arquivos###
+//para adicionar todas as mudanças
+
+git add *
+
+ou
+
+//add tudo dentro de uma pasta
+
+git add pasta/*
+
+ou
+
+//add arquivos
+
+git add arquivo1 arquivo2
+
+______________________
+###Commit e Push###
+
+git commit -m "mensagem"
+
+git push origin master
+
+_____________________
+###Remoção (Deve ser usado antes do commit)###
+(((Deleta pasta, arquivo, mesma logica dos comando "add")))
+
+// Deleta um arquivo especifico
+git rm nomedoarquivo
