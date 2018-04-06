@@ -51,8 +51,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Package\LerArquivo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Struct\Dados.cs" />
+    <Compile Include="Struct\Elemento.cs" />
+    <Compile Include="Struct\Fila.cs" />
+    <Compile Include="Struct\Lista.cs" />
+    <Compile Include="Struct\ListaDuplamenteEncadeada.cs" />
+    <Compile Include="Struct\ListaEncadeada.cs" />
+    <Compile Include="Struct\Pilha.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,9 +83,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Package\" />
-    <Folder Include="Struct\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
