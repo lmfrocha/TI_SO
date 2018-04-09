@@ -1,0 +1,16 @@
+C:\Users\93248003\Documents\SharpDevelop Projects\Calc_polonesa\Calc_polonesa\bin\Debug\Calc_polonesa.exe.config
+C:\Users\93248003\Documents\SharpDevelop Projects\Calc_polonesa\Calc_polonesa\bin\Debug\Calc_polonesa.exe
+C:\Users\93248003\Documents\SharpDevelop Projects\Calc_polonesa\Calc_polonesa\bin\Debug\Calc_polonesa.pdb
+C:\Users\93248003\Documents\SharpDevelop Projects\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.csprojResolveAssemblyReference.cache
+C:\Users\93248003\Documents\SharpDevelop Projects\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.exe
+C:\Users\93248003\Documents\SharpDevelop Projects\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.pdb
+C:\Users\93248003\Documents\SharpDevelop Projects\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.MainForm.resources
+C:\Users\93248003\Documents\SharpDevelop Projects\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.csproj.GenerateResource.Cache
+C:\AED\Calc_polonesa\Calc_polonesa\bin\Debug\Calc_polonesa.exe.config
+C:\AED\Calc_polonesa\Calc_polonesa\bin\Debug\Calc_polonesa.exe
+C:\AED\Calc_polonesa\Calc_polonesa\bin\Debug\Calc_polonesa.pdb
+C:\AED\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.csprojResolveAssemblyReference.cache
+C:\AED\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.MainForm.resources
+C:\AED\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.csproj.GenerateResource.Cache
+C:\AED\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.exe
+C:\AED\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.pdb
