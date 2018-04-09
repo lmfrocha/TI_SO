@@ -6,5 +6,6 @@ namespace Calc_polonesa
     {
         new bool Equals(Dados o);
         int CompareTo(Dados o);
+        //Leandro
     }
 }
