@@ -40,7 +40,7 @@ namespace TrabalhoIntegradoComSO.Structs
         /// Insere no final da lista.
         /// </summary>
         /// <param name="novo">Objeto novo que se deseja inserir</param>
-        public void inserirFim(Dados novo)
+        public void addFim(Dados novo)
         {
             Elemento aux = new Elemento(novo);
             this.ult.prox = aux;

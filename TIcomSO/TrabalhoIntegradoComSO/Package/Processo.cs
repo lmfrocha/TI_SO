@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TrabalhoIntegradoComSO.Package;
+using TrabalhoIntegradoComSO.Structs;
 
+#region Dados do Processo
 /*
  * Prezados, 
 
@@ -28,11 +31,11 @@ Havendo dúvidas, me escrevam.
 Att, 
 João
  */
-
+#endregion
 
 namespace TrabalhoIntegradoComSO.Package
 {
-    class Processo
+    class Processo : Dados
     {
         private int iD;
         private string nome;
@@ -61,8 +64,29 @@ namespace TrabalhoIntegradoComSO.Package
             return ID + Nome + Prioridade + TimeExec + Ciclos ;
         }
 
+        public Boolean Equals(Dados other)
+        {
+            Processo aux = (Processo)(other);
+            if (this.iD == aux.iD) return true;
+            else return false;
+        }
 
-
-
+        public int CompareTo(Dados other)
+        {
+            Processo aux = (Processo)(other);
+            if (this.prioridade.Equals(aux.prioridade))
+            {
+                return 0;
+            }
+            else if (this.prioridade > aux.prioridade)
+            {
+                return 1;
+            }
+            else if (this.prioridade < aux.prioridade)
+            {
+                return -1;
+            }
+            return 3;
+        }
     }
 }

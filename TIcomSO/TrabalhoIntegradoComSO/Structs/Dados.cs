@@ -5,8 +5,9 @@ using System.Text;
 
 namespace TrabalhoIntegradoComSO.Structs
 {
-    public interface Dados : IComparable<Dados>
+    public interface Dados : IEquatable<Dados>    
     {
-
+        new bool Equals(Dados o);
+        int CompareTo(Dados o);
     }
 }

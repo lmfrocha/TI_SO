@@ -13,15 +13,24 @@ namespace TrabalhoIntegradoComSO
 {
     public partial class Form1 : Form
     {
+        ListaCircular [] lCircular;
+        Lista list;
+
         public Form1()
         {
             InitializeComponent();
+            
             
         }
 
         private void btnLoadLista_Click(object sender, EventArgs e)
         {
+
+
+            list = LerArquivo.Ler();
+
             
+
         }
     }
 }
