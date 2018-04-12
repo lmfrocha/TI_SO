@@ -13,9 +13,9 @@ namespace TrabalhoIntegradoComSO
 {
     public partial class Form1 : Form
     {
-        ListaCircular [] lCircular;
-        Lista list;
-
+        
+        
+        Fila p1, p2, p3, p4, p5;
         public Form1()
         {
             InitializeComponent();
@@ -26,10 +26,13 @@ namespace TrabalhoIntegradoComSO
         private void btnLoadLista_Click(object sender, EventArgs e)
         {
 
+            p1 = new Fila();
+            p2 = new Fila();
+            p3 = new Fila();
+            p4 = new Fila();
+            p5 = new Fila();
 
-            list = LerArquivo.Ler();
-
-            
+            LerArquivo.Ler(p1,p2,p3,p4,p5);
 
         }
     }

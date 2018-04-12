@@ -37,7 +37,7 @@ namespace TrabalhoIntegradoComSO.Package
 {
     class Processo : Dados
     {
-        private int iD;
+        private int piD;
         private string nome;
         private int prioridade;
         private float timeExec;
@@ -46,14 +46,14 @@ namespace TrabalhoIntegradoComSO.Package
         //Construtor
         public Processo(int iD, string nome, int prioridade, float timeExec, int ciclos)
         {
-            this.iD = iD;
+            this.piD = iD;
             this.nome = nome;
             this.prioridade = prioridade;
             this.timeExec = timeExec;
             this.ciclos = ciclos;
         }
         //Métodos Get and Set
-        public int ID { get => iD; set => iD = value; }
+        public int ID { get => piD; set => piD = value; }
         public string Nome { get => nome; set => nome = value; }
         public int Prioridade { get => prioridade; set => prioridade = value; }
         public float TimeExec { get => timeExec; set => timeExec = value; }
@@ -61,13 +61,13 @@ namespace TrabalhoIntegradoComSO.Package
 
         public override string ToString()
         {
-            return ID + Nome + Prioridade + TimeExec + Ciclos ;
+            return ""+ID + Nome + Prioridade + TimeExec + Ciclos ;
         }
 
         public Boolean Equals(Dados other)
         {
             Processo aux = (Processo)(other);
-            if (this.iD == aux.iD) return true;
+            if (this.piD == aux.piD) return true;
             else return false;
         }
 
