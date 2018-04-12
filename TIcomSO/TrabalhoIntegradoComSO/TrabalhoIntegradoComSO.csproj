@@ -49,8 +49,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Package\LerArquivo.cs" />
+    <Compile Include="Package\Processo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structs\Dados.cs" />
+    <Compile Include="Structs\Elemento.cs" />
+    <Compile Include="Structs\Fila.cs" />
+    <Compile Include="Structs\Lista.cs" />
+    <Compile Include="Structs\ListaCircular.cs" />
+    <Compile Include="Structs\Pilha.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

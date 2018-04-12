@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TrabalhoIntegradoComSO.Package;
+using TrabalhoIntegradoComSO.Structs;
 
 namespace TrabalhoIntegradoComSO
 {
@@ -14,6 +16,12 @@ namespace TrabalhoIntegradoComSO
         public Form1()
         {
             InitializeComponent();
+            
+        }
+
+        private void btnLoadLista_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
