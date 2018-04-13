@@ -23,3 +23,12 @@ C:\AED\TI_SO\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.csproj.Generate
 C:\AED\TI_SO\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.csproj.CoreCompileInputs.cache
 C:\AED\TI_SO\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.exe
 C:\AED\TI_SO\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.pdb
+E:\Dev_Lab\Fontes\TI_SO\Calc_polonesa\Calc_polonesa\bin\Debug\Calc_polonesa.exe.config
+E:\Dev_Lab\Fontes\TI_SO\Calc_polonesa\Calc_polonesa\bin\Debug\Calc_polonesa.exe
+E:\Dev_Lab\Fontes\TI_SO\Calc_polonesa\Calc_polonesa\bin\Debug\Calc_polonesa.pdb
+E:\Dev_Lab\Fontes\TI_SO\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.csprojResolveAssemblyReference.cache
+E:\Dev_Lab\Fontes\TI_SO\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.MainForm.resources
+E:\Dev_Lab\Fontes\TI_SO\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.csproj.GenerateResource.cache
+E:\Dev_Lab\Fontes\TI_SO\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.csproj.CoreCompileInputs.cache
+E:\Dev_Lab\Fontes\TI_SO\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.exe
+E:\Dev_Lab\Fontes\TI_SO\Calc_polonesa\Calc_polonesa\obj\Debug\Calc_polonesa.pdb

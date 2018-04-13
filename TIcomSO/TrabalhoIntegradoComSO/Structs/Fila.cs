@@ -8,12 +8,13 @@ namespace TrabalhoIntegradoComSO.Structs
     class Fila
     {
         public Elemento prim, ult;
-
+        public int quantidade;
         /// <summary>
         /// Construtor. Cria uma fila vazia com sentinela.
         /// </summary>
         public Fila()
         {
+            this.quantidade = 0;
             this.prim = new Elemento(null);
             this.ult = this.prim;
         }
@@ -45,6 +46,7 @@ namespace TrabalhoIntegradoComSO.Structs
             Elemento aux = new Elemento(novo);
             this.ult.prox = aux;
             this.ult = aux;
+            this.quantidade += 1;
         }
 
         /// <summary>
@@ -59,10 +61,25 @@ namespace TrabalhoIntegradoComSO.Structs
                 this.prim.prox = aux.prox;
                 if (aux == this.ult) this.ult = this.prim;
                 else aux.prox = null;
+                this.quantidade -= 1;
                 return aux.d;
             }
             else
                 return null;
+        }
+
+        public bool estaVazia()
+        {
+            if (this.quantidade == 0)
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        public int totalLista()
+        {
+            return this.quantidade;
         }
     }
 }

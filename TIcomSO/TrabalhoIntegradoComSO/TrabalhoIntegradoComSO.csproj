@@ -51,6 +51,7 @@
     </Compile>
     <Compile Include="Package\LerArquivo.cs" />
     <Compile Include="Package\Processo.cs" />
+    <Compile Include="Package\GerenciaThread.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structs\Dados.cs" />
