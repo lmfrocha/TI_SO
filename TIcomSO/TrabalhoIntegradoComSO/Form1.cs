@@ -16,18 +16,36 @@ namespace TrabalhoIntegradoComSO
         
         
         Fila p1, p2, p3, p4, p5;
-        string prioridade;
+        
+
+        
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public Form1()
+        {
+            InitializeComponent();
+            
+            
+        }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
             Processo temp = new Processo(0, null, 0, 0, 0);
+
+            string prioridade = "";
+
+
             do
             {
-               
+
                 if (p1.estaVazia())
                 {
                     prioridade = "p1";
-                   
+
                 }
                 if (p2.estaVazia())
                 {
@@ -43,9 +61,9 @@ namespace TrabalhoIntegradoComSO
                 {
                     prioridade = "p5";
 
-                } 
+                }
 
-                switch(prioridade)
+                switch (prioridade)
                 {
                     case "p1":
                         temp = (Processo)p1.desenfileirar();
@@ -110,24 +128,15 @@ namespace TrabalhoIntegradoComSO
 
 
             } while (p1.estaVazia() || p2.estaVazia() || p3.estaVazia() || p4.estaVazia() || p5.estaVazia() != true);
-            
+
 
         }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        public Form1()
-        {
-            InitializeComponent();
-            
-            
-        }
-
         private void btnLoadLista_Click(object sender, EventArgs e)
         {
+
+            
+
+
 
             p1 = new Fila();
             p2 = new Fila();
@@ -135,24 +144,32 @@ namespace TrabalhoIntegradoComSO
             p4 = new Fila();
             p5 = new Fila();
 
-            //&& p2.estaVazia() && p3.estaVazia() && p4.estaVazia() && p5.estaVazia()
-            
-
-
             LerArquivo.Ler(p1,p2,p3,p4,p5);
+                       
+            StringBuilder aux = new StringBuilder();
+            aux.AppendLine("Fila de prioridade 1: " + p1.quantidade + " Processos");
+            aux.AppendLine("Fila de prioridade 2: " + p2.quantidade + " Processos");
+            aux.AppendLine("Fila de prioridade 3: " + p3.quantidade + " Processos");
+            aux.AppendLine("Fila de prioridade 4: " + p4.quantidade + " Processos");
+            aux.AppendLine("Fila de prioridade 5: " + p5.quantidade + " Processos");
+            MessageBox.Show(aux.ToString());
             
-
-            //for (int i = 0; i < p1.quantidade; i++)
-            //{
-            //    ListViewItem item = new ListViewItem();
-            //    item.Text = 
-            //    item.SubItems.Add(p1.quantidade.ToString());
-                
-                
-            //    listView1.Items.Add(item);
-            //    textBox1.Text = p1.totalLista().ToString();
-            //    p1.prim = p1.prim.prox;
-            //}
+            Processo ze = new Processo(0, null, 0, 0, 0);
+            ze = (Processo)  p1.desenfileirar();
+            p3.desenfileirar();
+            p5.desenfileirar();
+            aux = new StringBuilder();
+            aux.AppendLine("Fila de prioridade 1: " + p1.quantidade + " Processos");
+            aux.AppendLine("Fila de prioridade 2: " + p2.quantidade + " Processos");
+            aux.AppendLine("Fila de prioridade 3: " + p3.quantidade + " Processos");
+            aux.AppendLine("Fila de prioridade 4: " + p4.quantidade + " Processos");
+            aux.AppendLine("Fila de prioridade 5: " + p5.quantidade + " Processos");
+            MessageBox.Show(aux.ToString());
+            if (p3.estaVazia())
+            {
+                MessageBox.Show("Lista 3 vazia");
+            }
+            
         }
     }
 }

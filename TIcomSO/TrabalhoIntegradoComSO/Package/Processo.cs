@@ -116,17 +116,11 @@ namespace TrabalhoIntegradoComSO.Package
             this.prioridade = prioridade;
             this.timeExec = timeExec;
             this.ciclos = ciclos;
-        }
-        //Métodos Get and Set
-        //public int ID { get => piD; set => piD = value; }
-        //public string Nome { get => nome; set => nome = value; }
-        //public int Prioridade { get => prioridade; set => prioridade = value; }
-        //public float TimeExec { get => timeExec; set => timeExec = value; }
-        //public int Ciclos { get => ciclos; set => ciclos = value; }
+        }       
 
         public override string ToString()
         {
-            return ""+PiD + Nome + Prioridade + TimeExec + Ciclos ;
+            return PiD+";" + Nome +";"+ Prioridade +";"+ TimeExec +";"+ Ciclos ;
         }
 
         public Boolean Equals(Dados other)

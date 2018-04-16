@@ -70,6 +70,8 @@ namespace TrabalhoIntegradoComSO.Structs
 
         public bool estaVazia()
         {
+            Elemento aux = this.prim.prox;
+
             if (this.quantidade == 0)
             {
                 return true;
