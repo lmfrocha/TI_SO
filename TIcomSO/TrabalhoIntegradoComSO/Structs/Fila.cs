@@ -70,14 +70,19 @@ namespace TrabalhoIntegradoComSO.Structs
 
         public bool estaVazia()
         {
-            Elemento aux = this.prim.prox;
-
-            if (this.quantidade == 0)
-            {
-                return true;
-            }
-            else return false;
+            return (this.prim == this.ult);
         }
+
+        //public bool estaVazia()
+        //{
+        //    Elemento aux = this.prim.prox;
+
+        //    if (this.quantidade == 0)
+        //    {
+        //        return true;
+        //    }
+        //    else return false;
+        //}
 
         public int totalLista()
         {

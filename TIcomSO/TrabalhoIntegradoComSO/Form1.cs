@@ -8,13 +8,19 @@ using System.Text;
 using System.Windows.Forms;
 using TrabalhoIntegradoComSO.Package;
 using TrabalhoIntegradoComSO.Structs;
+using System.Threading;
 
 namespace TrabalhoIntegradoComSO
 {
     public partial class Form1 : Form
     {
          Fila p1, p2, p3, p4, p5;
-        
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -27,134 +33,169 @@ namespace TrabalhoIntegradoComSO
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            StringBuilder aux = new StringBuilder();
-            aux.AppendLine("Fila de prioridade 1: " + p1.quantidade + " Processos");
-            aux.AppendLine("Fila de prioridade 2: " + p2.quantidade + " Processos");
-            aux.AppendLine("Fila de prioridade 3: " + p3.quantidade + " Processos");
-            aux.AppendLine("Fila de prioridade 4: " + p4.quantidade + " Processos");
-            aux.AppendLine("Fila de prioridade 5: " + p5.quantidade + " Processos");
-            MessageBox.Show(aux.ToString());
             
+
+            int qt_ciclos=0;
             Processo temp = new Processo(0, null, 0, 0, 0);
+            int prioridade = 1;
 
-            string prioridade = "";
-
-            do
+            while (p1.estaVazia() || p2.estaVazia() || p3.estaVazia() || p4.estaVazia() || p5.estaVazia() != false)
             {
+                
 
-                if (p1.estaVazia()==false)
+
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
+                textBox5.Clear();
+
+                textBox1.Text = p1.quantidade.ToString();
+                textBox2.Text = p2.quantidade.ToString();
+                textBox3.Text = p3.quantidade.ToString();
+                textBox4.Text = p4.quantidade.ToString();
+                textBox5.Text = p5.quantidade.ToString();
+
+                StringBuilder aux = new StringBuilder();
+                aux.AppendLine("Qt p1: " + p1.quantidade.ToString());
+                aux.AppendLine("Qt p2: " + p2.quantidade.ToString());
+                aux.AppendLine("Qt p3: " + p3.quantidade.ToString());
+                aux.AppendLine("Qt p4: " + p4.quantidade.ToString());
+                aux.AppendLine("Qt p5: " + p5.quantidade.ToString());
+                MessageBox.Show(aux.ToString());
+
+
+                if (p1.estaVazia())
                 {
-                    prioridade = "p1";
+                    prioridade=2;
 
                 }
-                if ((p2.estaVazia() && p1.estaVazia()) ==false)
+                else if (p2.estaVazia())
                 {
-                    prioridade = "p3";
+                    prioridade =3;
 
                 }
-                if ((p2.estaVazia() && p1.estaVazia()&& p3.estaVazia())==false)
+                else if (p3.estaVazia())
                 {
-                    prioridade = "p4";
+                    prioridade =4;
 
                 }
-                if ((p2.estaVazia() && p1.estaVazia() && p3.estaVazia() && p4.estaVazia())==false)
+                else if (p4.estaVazia())
                 {
-                    prioridade = "p5";
+                    prioridade = 5;
 
                 }
+                else if (p5.estaVazia())
+                {
+                    break;
+                }
+                else break;
+
                 switch (prioridade)
                 {
-                    case "p1":
+                    case 1:
                         temp = (Processo)p1.desenfileirar();
-                        timer1.Enabled = true;
-                        timer1.Start();
-                        while (timer1.Interval < temp.TimeExec)
+                        if (temp != null)
                         {
+                            Thread.Sleep(Convert.ToInt32(temp.TimeExec * 1000));
+                            temp.Ciclos -= 1;
+                            qt_ciclos += 1;
+                            if (temp.Ciclos > 0)
+                            {
+                                p1.enfileirar(temp);
+                            }
+                            if (qt_ciclos > 10)
+                            {
+                                qt_ciclos = 0;
+                                p1.enfileirar(p2.desenfileirar());
+                            }
                         }
-                        timer1.Stop();
-                        timer1.Enabled = false;
-                        temp.Ciclos -= 1;
-                        if (temp.Ciclos > 0)
-                        {
-                            p1.enfileirar(temp);
-                        }
-                        
+                        prioridade = 0;
                         break;
-                    case "p2":
+
+                    case 2:
                         temp = (Processo)p2.desenfileirar();
-                        timer1.Enabled = true;
-                        timer1.Start();
-                        while (timer1.Interval < temp.TimeExec)
+                        if (temp != null)
                         {
+                            Thread.Sleep(Convert.ToInt32(temp.TimeExec * 1000));
+
+                            temp.Ciclos -= 1;
+                            qt_ciclos += 1;
+                            if (temp.Ciclos > 0)
+                            {
+                                p2.enfileirar(temp);
+                            }
+                            if (qt_ciclos > 10)
+                            {
+                                qt_ciclos = 0;
+                                p2.enfileirar(p3.desenfileirar());
+                            }
                         }
-                        timer1.Stop();
-                        timer1.Enabled = false;
-                        temp.Ciclos -= 1;
-                        if (temp.Ciclos > 0)
-                        {
-                            p2.enfileirar(temp);
-                        }
+                        prioridade = 0;
                         break;
-                    case "p3":
+
+                    case 3:
+
                         temp = (Processo)p3.desenfileirar();
-                        timer1.Enabled = true;
-                        timer1.Start();
-                        while (timer1.Interval < temp.TimeExec)
+                        if (temp != null)
                         {
+                            Thread.Sleep(Convert.ToInt32(temp.TimeExec * 1000));
+                            temp.Ciclos -= 1;
+                            qt_ciclos += 1;
+                            if (temp.Ciclos > 0)
+                            {
+                                p3.enfileirar(temp);
+                            }
+                            if (qt_ciclos > 10)
+                            {
+                                qt_ciclos = 0;
+                                p3.enfileirar(p4.desenfileirar());
+                            }
                         }
-                        timer1.Stop();
-                        timer1.Enabled = false;
-                        temp.Ciclos -= 1;
-                        if (temp.Ciclos > 0)
-                        {
-                            p3.enfileirar(temp);
-                        }
+                        prioridade = 0;
+
                         break;
-                    case "p4":
+                    case 4:
                         temp = (Processo)p4.desenfileirar();
-                        timer1.Enabled = true;
-                        timer1.Start();
-                        while (timer1.Interval < temp.TimeExec)
+                        if (temp != null)
                         {
+                            Thread.Sleep(Convert.ToInt32(temp.TimeExec * 1000));
+                            temp.Ciclos -= 1;
+                            if (temp.Ciclos > 0)
+                            {
+                                p5.enfileirar(temp);
+                            }
+                            if (qt_ciclos > 10)
+                            {
+                                qt_ciclos = 0;
+                                p4.enfileirar(p5.desenfileirar());
+                            }
                         }
-                        timer1.Stop();
-                        timer1.Enabled = false;
-                        temp.Ciclos -= 1;
-                        if (temp.Ciclos > 0)
-                        {
-                            p4.enfileirar(temp);
-                        }
+                        prioridade = 0;
                         break;
-                    case "p5":
+                    case 5:
                         temp = (Processo)p5.desenfileirar();
-                        timer1.Enabled = true;
-                        timer1.Start();
-                        while (timer1.Interval < temp.TimeExec)
+                        if (temp != null)
                         {
+                            Thread.Sleep(Convert.ToInt32(temp.TimeExec * 1000));
+                            temp.Ciclos -= 1;
+                            if (temp.Ciclos > 0)
+                            {
+                                p5.enfileirar(temp);
+                            }
                         }
-                        timer1.Stop();
-                        timer1.Enabled = false;
-                        temp.Ciclos -= 1;
-                        if (temp.Ciclos > 0)
-                        {
-                            p5.enfileirar(temp);
-                        }
+                        prioridade = 0;
+
                         break;
+
                     default:
+                        
                         break;
                 }
 
+            }
 
-
-            } while (p1.estaVazia() || p2.estaVazia() || p3.estaVazia() || p4.estaVazia() || p5.estaVazia() != true);
-
-            aux = new StringBuilder();
-            aux.AppendLine("Fila de prioridade 1: " + p1.quantidade + " Processos");
-            aux.AppendLine("Fila de prioridade 2: " + p2.quantidade + " Processos");
-            aux.AppendLine("Fila de prioridade 3: " + p3.quantidade + " Processos");
-            aux.AppendLine("Fila de prioridade 4: " + p4.quantidade + " Processos");
-            aux.AppendLine("Fila de prioridade 5: " + p5.quantidade + " Processos");
-            MessageBox.Show(aux.ToString());
+            
 
         }
         private void btnLoadLista_Click(object sender, EventArgs e)
@@ -166,31 +207,16 @@ namespace TrabalhoIntegradoComSO
             p5 = new Fila();
 
             LerArquivo.Ler(p1,p2,p3,p4,p5);
-                       
-            //StringBuilder aux = new StringBuilder();
-            //aux.AppendLine("Fila de prioridade 1: " + p1.quantidade + " Processos");
-            //aux.AppendLine("Fila de prioridade 2: " + p2.quantidade + " Processos");
-            //aux.AppendLine("Fila de prioridade 3: " + p3.quantidade + " Processos");
-            //aux.AppendLine("Fila de prioridade 4: " + p4.quantidade + " Processos");
-            //aux.AppendLine("Fila de prioridade 5: " + p5.quantidade + " Processos");
-            //MessageBox.Show(aux.ToString());
-            
-            //Processo ze = new Processo(0, null, 0, 0, 0);
-            //ze = (Processo)  p1.desenfileirar();
-            //p3.desenfileirar();
-            //p5.desenfileirar();
-            //aux = new StringBuilder();
-            //aux.AppendLine("Fila de prioridade 1: " + p1.quantidade + " Processos");
-            //aux.AppendLine("Fila de prioridade 2: " + p2.quantidade + " Processos");
-            //aux.AppendLine("Fila de prioridade 3: " + p3.quantidade + " Processos");
-            //aux.AppendLine("Fila de prioridade 4: " + p4.quantidade + " Processos");
-            //aux.AppendLine("Fila de prioridade 5: " + p5.quantidade + " Processos");
-            //MessageBox.Show(aux.ToString());
-            //if (p3.estaVazia())
-            //{
-            //    MessageBox.Show("Lista 3 vazia");
-            //}
-            
+
+
+
+
+            textBox1.Text = p1.quantidade.ToString();
+            textBox2.Text = p2.quantidade.ToString();
+            textBox3.Text = p3.quantidade.ToString();
+            textBox4.Text = p4.quantidade.ToString();
+            textBox5.Text = p5.quantidade.ToString();
+
         }
     }
 }
